@@ -20,5 +20,15 @@ export const fn = (a, b, c) => {
    a--;
    c--;
    empanadasMitadCarasBaratas += 2;
- }
+   }
+   while (b > 0 && c > 0) {
+      b--;
+      c--;
+      empanadasMitadCarasIntermedias += 2;
+    }
+    while (a > 0 && b > 0) {
+      a--;
+      b--;
+      empanadasMitadIntermediasBaratas += 2;
+    }
 };
