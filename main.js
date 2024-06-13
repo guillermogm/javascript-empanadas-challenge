@@ -10,4 +10,15 @@ export const fn = (a, b, c) => {
    if(a + b + c > 40) {
       throwError("No puedes poner mas de un total de 40 empanadas")
    }
+
+   let empanadasMitadCarasBaratas = 0;
+   let empanadasMitadCarasIntermedias = 0;
+   let empanadasMitadIntermediasBaratas = 0;
+
+  // Reducción de empanadas hasta hacer las "medias-empanadas" máximas posibles
+  while (a > 0 && c > 0) {
+   a--;
+   c--;
+   empanadasMitadCarasBaratas += 2;
+ }
 };
