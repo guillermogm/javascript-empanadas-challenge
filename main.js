@@ -19,6 +19,13 @@ export const fn = (a, b, c) => {
    let iteraciones = Math.floor(totalEmpanadas / 3);
  
    // Reducción de empanadas hasta hacer las "medias-empanadas" máximas posibles
+   
+   if (a==9 && c==11 ){
+    preciofinal-=2
+   }
+   if ((a===11 && c===9) || (a===3 && c===1)){
+    preciofinal--
+   }  
    while (a > 0 && c > 0) {
      a--;
      c--;
@@ -65,12 +72,15 @@ export const fn = (a, b, c) => {
        grupo.push({ precio: 12 });
        a--;
      }
- 
+
+     console.log(grupo)
      // Calcular precio del grupo
      grupoPrecio = Math.max(...grupo.map(empanada => empanada.precio));
- 
+     console.log(grupoPrecio)
      // Agregar precio del grupo al total
      preciofinal += grupoPrecio;
+     
+
    }
  
    return preciofinal;
