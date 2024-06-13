@@ -1,3 +1,3 @@
-export const fn = (/* argumentos de la función */) => {
+export const fn = (a, b, c) => {
    // Cuerpo de la función: Completa la lógica de la función aquí.
 };
