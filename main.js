@@ -28,15 +28,15 @@ export const fn = (a, b, c) => {
     c--;
     empanadasMitadCarasBaratas += 2;
   }
-  while (b > 0 && c > 0) {
-    b--;
-    c--;
-    empanadasMitadCarasIntermedias += 2;
-  }
   while (a > 0 && b > 0) {
     a--;
     b--;
     empanadasMitadIntermediasBaratas += 2;
+  }
+  while (b > 0 && c > 0) {
+    b--;
+    c--;
+    empanadasMitadCarasIntermedias += 2;
   }
 
   // Formación de grupos de 3 empanadas cobrándose la de más valor
@@ -50,38 +50,39 @@ export const fn = (a, b, c) => {
     }
     if (empanadasMitadCarasIntermedias > 0) {
       grupo.push({ precio: 15 });
-      empanadasMitadCarasIntermedias--;
+      empanadasMitadCarasIntermedias-=2;
     }
     if (b > 0) {
       grupo.push({ precio: 14 });
       b--;
     }
-    if (c2 == 11) {
-      c2--
-      preciofinal -= 2
-    }
-    if (a2 === 11 || (a2 === 3 && c2 === 1)) {
-      a2--
-      preciofinal--
-    }
+    // if (c2 == 11) {
+    //   c2--
+    //   preciofinal -= 2
+    // }
+    // if (a2 === 11 || (a2 === 3 && c2 === 1)) {
+    //   a2--
+    //   preciofinal--
+    // }
     if (empanadasMitadCarasBaratas > 0) {
       grupo.push({ precio: 14 });
       empanadasMitadCarasBaratas--;
     }
     if (empanadasMitadIntermediasBaratas > 0) {
       grupo.push({ precio: 13 });
-      empanadasMitadIntermediasBaratas--;
+      empanadasMitadIntermediasBaratas-=2;
     }
     if (a > 0) {
       grupo.push({ precio: 12 });
       a--;
     }
-
+    console.log(grupo)
     // Calcular precio del grupo
     grupoPrecio = Math.max(...grupo.map(empanada => empanada.precio));
+    console.log(grupoPrecio)
     // Agregar precio del grupo al total
     preciofinal += grupoPrecio;
-
+    console.log(preciofinal)
 
   }
 
